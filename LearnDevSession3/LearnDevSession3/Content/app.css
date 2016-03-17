@@ -1,0 +1,15 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #483d8b;
+    padding: 30px;
+    color: #fff;
+}
+
+footer {
+    background-color: #483d8b;
+    padding: 10px 30px;
+    color: #fff;
+}
