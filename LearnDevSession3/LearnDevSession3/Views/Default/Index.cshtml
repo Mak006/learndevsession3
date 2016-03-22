@@ -15,10 +15,58 @@
 </head>
 <body>
     <header class="container-fluid">
-        HEADER
+        <nav class="navbar navbar-default">
+            <div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">LearnDev</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Articles</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
     </header>
     <section class="container-fluid">
-        MAIN
+        <div class="row">
+            <section class="col-lg-7 col-md-6 col-md-push-3">
+                ITEMS
+            </section>
+            <aside class="col-md-3 col-md-pull-6 col-lg-pull-7">
+                PROFILE
+            </aside>
+            <aside class="col-lg-2 col-md-3 friends">
+                <h3>FRIENDS</h3>
+                <div class="friend">
+                    <div class="img-circle friend-initials">HS</div>
+                    <div class="friend-name">Homer Simpson</div>
+                    <div class="friend-details">
+                        <div>12 courses taken</div>
+                        <div>10 articles reviewed</div>
+                    </div>
+                </div>
+                <div class="friend">
+                    <div class="img-circle friend-initials">MS</div>
+                    <div class="friend-name">Marge Simpson</div>
+                    <div class="friend-details">
+                        <div>12 courses taken</div>
+                        <div>10 articles reviewed</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </section>
     <footer class="container-fluid">
         &copy; Copyright 2016
