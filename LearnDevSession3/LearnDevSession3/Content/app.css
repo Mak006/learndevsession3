@@ -48,9 +48,57 @@ footer {
     float: right;
     font-weight: bold;
     padding-top: 2px;
+    max-width: 160px;
+    text-align: right;
 }
 .friend-details {
     font-size: smaller;
     text-align: right;
     clear: both;
+}
+
+/* PROFILE */
+
+.profile {
+    border: solid 1px #BBB;
+    box-shadow: 0px 2px 10px #BBB;
+    margin-top: 20px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    margin: -4px -4px 0px -4px;
+
+}
+
+.profile-initials {
+    border: solid 1px #fff;
+    background-color: #008000;
+    color: #fff;
+    font-size: x-large;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding-top: 6px;
+    margin-top: -25px;
+}
+
+.profile-name {
+    float: right;
+    margin-top: -25px;
+    font-size: large;
+    font-weight: bold;
+}
+.profile-description {
+    clear: both;
+    padding-top: 15px;
+    font-size: smaller;
+}
+
+.profile .form-group:first-child {
+    padding-top: 5px;
 }
