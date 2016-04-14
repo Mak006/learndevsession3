@@ -56,7 +56,6 @@ class Items extends React.Component<{}, IItemsState> {
         });
     }
     render() {
-        debugger;
         let itemsList: any[] = [];
         this.state.data.forEach((item: IItemProps) => {
             itemsList.push(<Item key={item.id} title={item.title} description={item.description} rating={item.rating} href={item.href} />);

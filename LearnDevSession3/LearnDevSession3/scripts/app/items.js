@@ -27,7 +27,6 @@ class Items extends React.Component {
         });
     }
     render() {
-        debugger;
         let itemsList = [];
         this.state.data.forEach((item) => {
             itemsList.push(React.createElement(Item, {"key": item.id, "title": item.title, "description": item.description, "rating": item.rating, "href": item.href}));
