@@ -194,7 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\app\friends.tsx" />
+    <TypeScriptCompile Include="scripts\app\index.tsx" />
     <TypeScriptCompile Include="scripts\app\items.tsx" />
+    <TypeScriptCompile Include="scripts\app\profile.tsx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -209,7 +211,7 @@
     <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
     <TypeScriptOutFile />
     <TypeScriptOutDir />

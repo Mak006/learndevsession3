@@ -124,4 +124,5 @@ class Profile extends React.Component<{}, IProfileState> {
     }
 }
 
-ReactDOM.render(<Profile />, document.getElementById("profileNode"));
+export = Profile;
+

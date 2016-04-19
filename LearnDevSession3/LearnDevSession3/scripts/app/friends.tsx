@@ -4,7 +4,10 @@
 
 /// <reference path="../../typings/react/react-global.d.ts"/>
 
-interface IFriendProps {
+import request = require("dojo/request");
+import xhr = require("dojo/request/xhr");
+
+export interface IFriendProps {
     id?: number;
     key?: number;
     initials: string;
@@ -13,7 +16,7 @@ interface IFriendProps {
     courses: number;
 }
 
-class Friend extends React.Component<IFriendProps, {}> {
+export class Friend extends React.Component<IFriendProps, {}> {
     render() {
         return (
             <div className="friend">
@@ -28,14 +31,42 @@ class Friend extends React.Component<IFriendProps, {}> {
     }
 }
 
-interface IFriendsProps {
+export interface IFriendsProps {
     initialData: IFriendProps[]
 }
-
-class Friends extends React.Component<IFriendsProps, {}> {
+export interface IFriendsState
+{
+    data: IFriendProps[]
+}
+export class Friends extends React.Component<IFriendsProps, IFriendsState> {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: this.props.initialData
+        }
+    }
+    getData() {
+        let options: any = {
+            handleAs: "json",
+            headers: {
+                "X-Requested-With": null
+            }
+        }
+        let promise = xhr.get("http://learndevapi.azurewebsites.net/api/Friends", options);
+        promise.then((data: any) => {
+            data = data.map((value, idx) => {
+                value.articles = value.articlesCount;
+                value.courses = value.coursesCount;
+                return value;
+            });
+            this.setState({ data: data });
+        }, (errorData: any) => {
+            console.log("ERROR");
+        });
+    }
     render() {
         let friendsList: any[] = [];
-        this.props.initialData.forEach((friend: IFriendProps) => {
+        this.state.data.forEach((friend: IFriendProps) => {
             friendsList.push(<Friend key={friend.id} initials={friend.initials} name={friend.name} articles={friend.articles} courses={friend.courses} />);
         });
         return (
@@ -47,16 +78,4 @@ class Friends extends React.Component<IFriendsProps, {}> {
     }
 }
 
-let friendsData:IFriendProps[] = [
-    { id: 1, name: 'Sorin Armenciu', initials: 'SA', courses: 9, articles: 7 },
-    { id: 2, name: 'Remus Bodean', initials: 'RB', courses: 7, articles: 10 },
-    { id: 3, name: 'Bruno Donato', initials: 'BD', courses: 13, articles: 8 },
-    { id: 4, name: 'Balaji Gopal', initials: 'BG', courses: 12, articles: 11 },
-    { id: 5, name: 'Saritha Kaja', initials: 'SK', courses: 8, articles: 7 },
-    { id: 6, name: 'Bernard Kwai-Pun', initials: 'BK', courses: 4, articles: 19 },
-    { id: 7, name: 'Dave Robson', initials: 'DR', courses: 7, articles: 9 },
-    { id: 8, name: 'Benazir Sharma', initials: 'BS', courses: 12, articles: 11 }
-];
-
-ReactDOM.render(<Friends initialData={friendsData} />, document.getElementById("friendsNode"));
 

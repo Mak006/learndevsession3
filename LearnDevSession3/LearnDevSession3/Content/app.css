@@ -12,6 +12,10 @@ section, aside {
 }
 .navbar.navbar-default.navbar-fixed-top {
     padding: 30px;
+    transition: padding 0.5s;
+}
+.navbar.navbar-default.navbar-fixed-top.scrolled {
+    padding: 0 30px;
 }
 
 footer {
